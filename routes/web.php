@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MenuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+
 });
+
+
+Route::get('/list-menu/get-all-data',[MenuController::class,'getAllMenu']);
+Route::get('/list-menu',[MenuController::class,'getMenu']);
+Route::get('/list-menu/{menu}/{harga}',[MenuController::class,'getMenuDetail']);
